@@ -49,7 +49,7 @@
         <netbeans.run.params>${netbeans.run.params.ide}</netbeans.run.params>
         
         <!-- Netbeans Platfrom version -->
-        <netbeans.version>RELEASE73</netbeans.version>
+        <netbeans.version>RELEASE74</netbeans.version>
         
         <!-- Localization ZIP version, from 'http://netbeans.org/project_downloads/nblocalization' -->
         <gephi.platform.localization.version>7.2</gephi.platform.localization.version>
@@ -156,7 +156,7 @@
 
         <gephi.build-helper-maven-plugin.version>1.8</gephi.build-helper-maven-plugin.version>
 
-        <gephi.nbm-maven-plugin.version>3.10.1</gephi.nbm-maven-plugin.version>
+        <gephi.nbm-maven-plugin.version>3.11.1</gephi.nbm-maven-plugin.version>
         
         <gephi.maven-reactor-plugin.version>1.0</gephi.maven-reactor-plugin.version>
         
@@ -725,6 +725,16 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    
+    <!-- TestNG dependency -->
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8.7</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         
@@ -735,15 +745,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>nbm-maven-plugin</artifactId>
                     <version>${gephi.nbm-maven-plugin.version}</version>
-                    <!-- Remove when nbm-maven-plugin 3.11 is released (MNBMODULE-215) -->
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.apache.maven.shared</groupId>
-                            <artifactId>maven-dependency-tree</artifactId>
-                            <version>2.1</version>
-                        </dependency>
-                    </dependencies>
-                    <!-- END -->
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1183,6 +1184,7 @@
         <module>modules/DesktopProgress</module>
         <module>modules/DesktopProject</module>
         <module>modules/DesktopRecentFiles</module>
+        <module>modules/DesktopStatistics</module>
         <module>modules/DirectoryChooser</module>
         <module>modules/DynamicAPI</module>
         <module>modules/ExportAPI</module>
@@ -1209,6 +1211,9 @@
         <module>modules/ProjectAPI</module>
         <module>modules/ProjectUI</module>
         <module>modules/SettingsUpgrader</module>
+        <module>modules/StatisticsAPI</module>
+        <module>modules/StatisticsPlugin</module>
+        <module>modules/StatisticsPluginUI</module>
         <module>modules/ToolsAPI</module>
         <module>modules/UIComponents</module>
         <module>modules/UIUtils</module>
